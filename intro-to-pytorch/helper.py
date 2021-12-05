@@ -97,7 +97,7 @@ def view_classify(img, ps, version="MNIST"):
     '''
     ps = ps.data.numpy().squeeze()
     fig, (ax1, ax2) = plt.subplots(figsize=(6,9), ncols=2)
-    ax1.imshow(img.resize_(1, 28, 28).numpy().squeeze(), normalize=True)
+    ax1.imshow(img.resize_(1, 28, 28).numpy().squeeze(), cmap=plt.get_cmap('gray'))
     ax1.axis('off')
     ax2.barh(np.arange(10), ps)
     ax2.set_aspect(0.1)
